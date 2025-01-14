@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box form-box-ejercicio1">
+            <h2>Formulario de Notas</h2>
+            <form method="post">
+                <div class="form-group">
+                    <label for="nota1">Nota 1:</label>
+                    <input type="number" id="nota1" name="nota1" min="10" max="70" required>
+                </div>
+                <div class="form-group">
+                    <label for="nota2">Nota 2:</label>
+                    <input type="number" id="nota2" name="nota2" min="10" max="70" required>
+                </div>
+                <div class="form-group">
+                    <label for="nota3">Nota 3:</label>
+                    <input type="number" id="nota3" name="nota3" min="10" max="70" required>
+                </div>
+                <div class="form-group">
+                    <label for="asistencia">Asistencia (%):</label>
+                    <input type="number" id="asistencia" name="asistencia" min="0" max="100" required>
+                </div>
+                <button type="submit" class="btn btn-ejercicio1">Enviar</button>
+            </form>
+
+            {% if promedio is not none and estado is not none %}
+                <div class="result">
+                    <p><strong>Promedio:</strong> {{ promedio }}</p>
+                    <p><strong>Estado:</strong>
+                        {% if estado == 'Aprobado' %}
+                            <span style="color: blue;"><strong>{{ estado }}</strong></span>
+                        {% else %}
+                            <span style="color: red;"><strong>{{ estado }}</strong></span>
+                        {% endif %}
+                    </p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
